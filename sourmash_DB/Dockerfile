@@ -14,6 +14,5 @@ RUN pip install sourmash
 RUN /bin/sh -c "echo 'backend: Agg' > /root/.config/matplotlib/matplotlibrc"
 RUN mkdir /sourmash_DB
 RUN wget https://s3-us-west-2.amazonaws.com/sourmash-databases/2018-03-29/genbank-d2-k31.tar.gz
-RUN /bin/bash -c "tar -xf genbank-d2-k31.tar.gz -C /sourmash_DB/"
-RUN rm -f genbank-d2-k31.tar.gz
+RUN /bin/bash -c "tar -xf --delete genbank-d2-k31.tar.gz -C /sourmash_DB/"
 ENV DB /sourmash_DB/genbank-k31.sbt.json
